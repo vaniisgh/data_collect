@@ -1,0 +1,21 @@
+<!doctype html>
+<title>Upload new File</title>
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+{% endfor %}
+{% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+</div>
+<h1>Upload new File</h1>
+<body> The first row of the csv will be assumed to be headers</body>
+<form method=post enctype=multipart/form-data>
+    <input name="file_path">
+    <input type=submit value=Upload>
+    <input type=submit name=Cancel value=Cancel>
+</form>
