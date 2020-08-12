@@ -30,7 +30,7 @@ pip install -r requirements.txt
 python setup.py develop
 ```
 
-The flask-app in deployed on `127.0.0.1:5000\` and the upload file endpoint is:
+The flask-app in deployed on `0.0.0.0:5001\` and the upload file endpoint is:
 `\upload`
 To see a list of your uploads :
 `\list`
@@ -42,29 +42,23 @@ ensure docker daemon is running & `cd path\to\data-collect`
 build using:
 
 ```bash
-docker build
-OR
-docker-compose build
+docker build build -t data_collect
 ```
-
-docker build -t data_collect
-
-Start
 
 ```bash
-docker-compose up -d
+ docker run -i -t -p 5001:5001 data_collect
 ```
 
-### Deploy using minikube
+Then the service will be available on your `http://localhost:5001`
 
-install minikube & kubectl
+### Deploy using KIND or Minikube
 
+install kind
 ```bash
 
 ```
 
 ```bash
-sudo minikube start --driver=docker
 ```
 
 ---*---

@@ -1,21 +1,20 @@
-FROM python:3.6-alpine
+FROM python:slim
 
-RUN pip3 install --upgrade pip setuptools
+RUN    pip3 install --upgrade pip setuptools
 
 WORKDIR /home/data_collect
 
-RUN python -m venv venv
-
 COPY app app
 COPY app.py app.py
-COPY setup.py setup.py
 
+COPY requirements.txt requirements.txt
 
 ENV FLASK_APP app.py
 
-RUN source venv/bin/activate
-RUN python setup.py develop
+## Install dependencies
+RUN pip3 install -r requirements.txt
 
-EXPOSE 127
-ENTRYPOINT [ "python" ]
+EXPOSE 5001
+
+ENTRYPOINT [ "python3" ]
 CMD [ "app.py" ]
