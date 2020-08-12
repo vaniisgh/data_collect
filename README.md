@@ -27,7 +27,7 @@ source venv/bin/activate activate
 pip install -r requirements.txt
 
 # Install app
-python setup.py develop
+python app.py
 ```
 
 The flask-app in deployed on `0.0.0.0:5001\` and the upload file endpoint is:
