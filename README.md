@@ -74,8 +74,7 @@ hence the app asks user for the full filepath
 - Not tested for multiple windows but should work fine
 
 ### TODO
-
-- add a clear database button
+- add a download button from the /list endpoint
 - add users to the database with username & passwords
 - catch pandas related errors
 
